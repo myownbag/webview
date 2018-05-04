@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import static android.view.KeyEvent.KEYCODE_BACK;
 
@@ -17,9 +18,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         webView=findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl(url1);
+        webView.loadUrl(url);
         webView.canGoBack();
         webView.canGoForward();
+
+        webView.setWebViewClient(new WebViewClient());
 /*
         //是否可以后退
         Webview.canGoBack()
